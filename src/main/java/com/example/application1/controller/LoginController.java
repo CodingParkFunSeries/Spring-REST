@@ -14,12 +14,12 @@ public class LoginController {
     @Autowired
     LoginService loginService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login1", method = RequestMethod.GET)
     public String showLoginPage(ModelMap model) {
         return "login";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login1", method = RequestMethod.POST)
     public String handleLogin(ModelMap model, @RequestParam String name, @RequestParam String password) {
 
         boolean isValidUser = loginService.isValidUser(name, password);

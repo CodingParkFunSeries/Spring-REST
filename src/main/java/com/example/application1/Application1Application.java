@@ -13,6 +13,8 @@ import java.util.Locale;
 /**
  * Swagger URL - http://localhost:8080/v2/api-docs
  * Swagger UI - http://localhost:8080/swagger-ui.html
+ *
+ * Actuator - http://localhost:8080/application
  */
 
 // @SpringBootApplication - It initializes spring framework, auto configuration, component scan.
