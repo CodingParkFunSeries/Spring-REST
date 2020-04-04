@@ -4,6 +4,8 @@ import com.example.application1.entity.User;
 import com.example.application1.exception.UserNotFoundException;
 import com.example.application1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -11,6 +13,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+
+import static org.springframework.hateoas.server.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 public class UserController {
@@ -31,7 +36,15 @@ public class UserController {
             throw new UserNotFoundException("User Id : " + id);
         }
 
-        // HATEOS
+        //"all-users", SERVER_PATH + "/users"
+        //retrieveAllUsers
+        EntityModel<User> resource = new EntityModel<>(user);
+
+        ControllerLinkBuilder linkTo =
+                linkTo(methodOn(this.getClass()).retrieveAllUsers());
+
+        resource.add(linkTo.withRel("all-users"));
+
 
         return user;
     }
