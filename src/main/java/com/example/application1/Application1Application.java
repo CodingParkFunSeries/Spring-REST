@@ -10,6 +10,11 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 
 import java.util.Locale;
 
+/**
+ * Swagger URL - http://localhost:8080/v2/api-docs
+ * Swagger UI - http://localhost:8080/swagger-ui.html
+ */
+
 // @SpringBootApplication - It initializes spring framework, auto configuration, component scan.
 @SpringBootApplication
 public class Application1Application {
