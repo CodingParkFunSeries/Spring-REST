@@ -13,6 +13,7 @@
 * Swagger
 * Content Negotitation
 * Monitor APIs with Actuator
+* Filtering
 * API versioning
 * Authentication
 
